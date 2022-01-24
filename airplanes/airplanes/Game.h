@@ -26,15 +26,14 @@ private:
 	void processKeys(sf::Event t_event);
 	void update(sf::Time t_deltaTime);
 	void render();
-	
-	void setupFontAndText();
-	void setupSprite();
+
+	void setupPlaneSprite();
 
 	sf::RenderWindow m_window; // main SFML window
-	sf::Font m_ArialBlackfont; // font used by message
-	sf::Text m_welcomeMessage; // text used for message on screen
-	sf::Texture m_logoTexture; // texture used for sfml logo
-	sf::Sprite m_logoSprite; // sprite used for sfml logo
+	sf::Texture m_planeText; // plane texture
+	sf::Sprite m_smallPlaneSprite; // small plane sprite
+	sf::Sprite m_bigPlaneSprite; // big plane sprite
+
 	bool m_exitGame; // control exiting game
 
 };
