@@ -9,6 +9,8 @@
 /// Don't forget the endif at the bottom
 /// </summary>
 #include <SFML/Graphics.hpp>
+#define _USE_MATH_DEFINES
+#include <math.h>
 
 class Game
 {
@@ -37,9 +39,9 @@ private:
 	sf::Sprite m_smallPlaneSprite; // small plane sprite
 	sf::Sprite m_bigPlaneSprite; // big plane sprite
 
-	sf::Vector2f m_firstClick{ 0.0f, 0.0f }; // First mouse click
-	sf::Vector2f m_secondClick{ 0.0f, 0.0f }; // second mouse click
-	sf::Vector2f m_smallPlaneLocation; // tracks location of small plane
+	sf::Vector2f m_firstClick{ 0.0f, 0.0f }; // mouse click down
+	sf::Vector2f m_secondClick{ 0.0f, 0.0f }; // mouse click up
+	sf::Vector2f m_smallPlaneLocation{ 400.0f, 300.0f }; // tracks location of small plane
 	sf::Vector2f m_smallPlaneVelocity{ -2.0f,2.0f }; // velocity of small plane
 	float m_smallPlaneFacing = 225.0f; // where the plane is facing
 

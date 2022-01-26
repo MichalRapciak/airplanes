@@ -104,17 +104,28 @@ void Game::processKeys(sf::Event t_event)
 /// <param name="t_event">key press event</param>
 void Game::processMousePress(sf::Event t_event)
 {
-	m_firstClick.x = t_event.mouseButton.x;
+	m_firstClick.x = t_event.mouseButton.x; // when it is pressed down
 	m_firstClick.y = t_event.mouseButton.y;
 }
 
+/// <summary>
+/// Deals with mouse keys being released
+/// </summary>
+/// <param name="t_event">key press event</param>
 void Game::processMouseRelease(sf::Event t_event)
 {
-
-
-
-
-
+	m_secondClick.x = t_event.mouseButton.x; // when it is pressed up
+	m_secondClick.y = t_event.mouseButton.y;
+	sf::Vector2f velocity = m_secondClick - m_firstClick; // velocity vector used for the speed and direction of the airplane
+	float facingRadians = std::atan2(velocity.y, velocity.x); // used to calculate the radians of the velocity
+	float facingDegrees = 180.0f * facingRadians / static_cast<float>(M_PI); // used to switch the radians to degrees
+	facingDegrees += 90.0f; // adds 90 degrees for it to move in the right direction and not 90 degrees off
+	if (sf::Mouse::Left == t_event.mouseButton.button)
+	{
+		m_smallPlaneVelocity = velocity / 100.0f; // speed of the flight
+		m_smallPlaneFacing = facingDegrees; // set facing degree using degrees
+		m_smallPlaneSprite.setRotation(facingDegrees); // update airplane rotation
+	}
 }
 
 /// <summary>
@@ -127,6 +138,7 @@ void Game::update(sf::Time t_deltaTime)
 	{
 		m_window.close();
 	}
+	movePlane();
 }
 
 /// <summary>
@@ -154,10 +166,11 @@ void Game::setupPlaneSprite()
 	m_smallPlaneSprite.setPosition(sf::Vector2f{ 400.0f, 300.0f });
 }
 
+/// <summary>
+/// Used to move plane
+/// </summary>
 void Game::movePlane()
 {
-
-
-
-
+	m_smallPlaneLocation += m_smallPlaneVelocity; // Adding velocity to the location
+	m_smallPlaneSprite.setPosition(m_smallPlaneLocation); // updating location
 }

@@ -1,2 +1,24 @@
 ﻿  Game.cpp
+G:\Mathematics\airplanes\airplanes\airplanes\Game.cpp(107,38): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+G:\Mathematics\airplanes\airplanes\airplanes\Game.cpp(108,38): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+G:\Mathematics\airplanes\airplanes\airplanes\Game.cpp(117,39): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+G:\Mathematics\airplanes\airplanes\airplanes\Game.cpp(118,39): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+  main.cpp
+  Generating Code...
   airplanes.vcxproj -> G:\Mathematics\airplanes\airplanes\Debug\airplanes.exe
