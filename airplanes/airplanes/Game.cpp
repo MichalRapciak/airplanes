@@ -74,6 +74,14 @@ void Game::processEvents()
 		{
 			processKeys(newEvent);
 		}
+		if (sf::Event::MouseButtonPressed == newEvent.type)
+		{
+			processMousePress(newEvent);
+		}
+		if (sf::Event::MouseButtonReleased == newEvent.type)
+		{
+			processMouseRelease(newEvent);
+		}
 	}
 }
 
@@ -88,6 +96,25 @@ void Game::processKeys(sf::Event t_event)
 	{
 		m_exitGame = true;
 	}
+}
+
+/// <summary>
+/// deals with mouse keys pressed
+/// </summary>
+/// <param name="t_event">key press event</param>
+void Game::processMousePress(sf::Event t_event)
+{
+	m_firstClick.x = t_event.mouseButton.x;
+	m_firstClick.y = t_event.mouseButton.y;
+}
+
+void Game::processMouseRelease(sf::Event t_event)
+{
+
+
+
+
+
 }
 
 /// <summary>
@@ -125,4 +152,12 @@ void Game::setupPlaneSprite()
 	m_smallPlaneSprite.setTextureRect(sf::IntRect{ 360, 200, 90, 90 });
 	m_smallPlaneSprite.setOrigin(sf::Vector2f{ 45.0f,45.0f });
 	m_smallPlaneSprite.setPosition(sf::Vector2f{ 400.0f, 300.0f });
+}
+
+void Game::movePlane()
+{
+
+
+
+
 }
