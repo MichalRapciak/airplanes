@@ -4,6 +4,7 @@
 /// Estimated time - 12 Hours
 /// Session 1 - 24/01/2022 - 2 Hours
 /// Session 2 - 26/01/2022 - 1 Hour
+/// Session 3 - 29/01/2022 - 1 Hour
 /// </summary>
 
 #include "Game.h"

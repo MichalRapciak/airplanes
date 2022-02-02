@@ -19,4 +19,6 @@ G:\Mathematics\airplanes\airplanes\airplanes\Game.cpp(121,35): warning C4244: '=
           [
               T=float
           ]
+  main.cpp
+  Generating Code...
   airplanes.vcxproj -> G:\Mathematics\airplanes\airplanes\Debug\airplanes.exe
